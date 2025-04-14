@@ -37,20 +37,22 @@ sudo apt install openssh-server openssh-client
 ssh-copy-id yury@192.168.65.136  
 проверим  
 ansible my -m ping -i hosts  
-<img src = "img/1-2.png" width = 60%>  
+<img src = "img/1-2.png" width = 60%>    
 Вновь исправим конфигурационный файл, чтобы не указывать при запуске ansible файл hosts, проверим  
-inventory = /home/yury/HW/7-1-2/hosts
-<img src = "img/1-3.png" width = 60%>  
+inventory = /home/yury/HW/7-1-2/hosts  
+<img src = "img/1-3.png" width = 60%>   
 Проверим синтаксиса плейбука:  
-ansible-playbook 7-1-2-1-1.playbook.yml --syntax-check (+)  
-Запустим плейбук:  
-aansible-playbook 7-1-2-1-1.playbook.yml 
-<img src = "img/1-4.png" width = 60%>    
-проверим на воркере  
+ansible-playbook 7-1-2-1-1.playbook.yml --syntax-check (+)    
+Запустим плейбук:    
+aansible-playbook 7-1-2-1-1.playbook.yml   
+<img src = "img/1-4.png" width = 60%>     
+проверим на воркере    
 <img src = "img/1-5.png" width = 60%>   
-[ссылка на плейбук](./7-1-2-1-1.playbook.yml).
+[ссылка на плейбук](./7-1-2-1-1.playbook.yml).  
 
 2. 
+
+
 ---
 
 ### Задание 2
