@@ -1,0 +1,19 @@
+---
+- name: Playbook 7-1-2-1
+  hosts: my
+  become: no
+  tasks:
+
+  - name: create directory for Download/unarchive
+    ansible.builtin.file:
+      path: /tmp/hw
+      state: directory
+      #recurse: yes
+    
+  - name: Download/unarchive Packages
+    ansible.builtin.unarchive:
+      src: https://eu.mirror.archlinuxarm.org/aarch64/extra/apache-2.4.63-1-aarch64.pkg.tar.xz
+      dest: /tmp/hw
+      remote_src: yes
+   
+...
