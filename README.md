@@ -48,6 +48,7 @@ aansible-playbook 7-1-2-1-1.playbook.yml
 <img src = "img/1-4.png" width = 60%>    
 проверим на воркере  
 <img src = "img/1-5.png" width = 60%>   
+[ссылка на плейбук](./7-1-2-1-1.playbook.yml).
 
 2. 
 ---
