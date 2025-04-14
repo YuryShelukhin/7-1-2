@@ -44,7 +44,7 @@ inventory = /home/yury/HW/7-1-2/hosts
 Проверим синтаксиса плейбука:  
 ansible-playbook 7-1-2-1-1.playbook.yml --syntax-check (+)    
 Запустим плейбук:    
-aansible-playbook 7-1-2-1-1.playbook.yml   
+ansible-playbook 7-1-2-1-1.playbook.yml   
 <img src = "img/1-4.png" width = 60%>     
 проверим на воркере    
 <img src = "img/1-5.png" width = 60%>   
