@@ -1,0 +1,66 @@
+{% set my_list = ansible_processor %}
+{% set unique_values = [] %}
+{% for value in my_list: %}
+    {% if value not in unique_values %}
+       {{ unique_values.append(value) }}
+    {% endif %}
+{% endfor %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ inventory_hostname }}</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><b>CPU:</b></td>
+        </tr>
+            {% for item in unique_values %}
+                {% if 'CPU' in  item  %}
+                <tr>
+                    <td> {{ item }} </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+    </table>
+    <table>
+        <tr>
+            <td><b>RAM:</b></td>
+        </tr>
+        <tr>
+            <td>{{ ansible_memory_mb.real.total }} MB</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><b>Disk Space Total:</b></td>
+        </tr>
+        <tr>
+            <!-- <td>{{ ansible_mounts[0].size_total | float / 1073741824 | round(2) }} GB</td> -->
+              <td>{{ ansible_devices.sda.size }}</td>
+        </tr>
+    </table>
+    <!-- <table>
+        <tr>
+            <td><b>Disk Space Available:</b></td>
+        </tr>
+        <tr>
+            <td>{{ ansible_mounts[0].size_available | float / 1073741824 | round(2) }} GB</td>
+        </tr>
+    </table> -->
+    <table>
+        <tr>
+            <td><b>IP Address:</b></td>
+        </tr>
+        <tr>
+            <td>{{ ansible_default_ipv4.address }}</td>
+        </tr>
+    </table>
+</body>
+</html>
+

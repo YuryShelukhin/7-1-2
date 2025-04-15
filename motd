@@ -1,3 +1,4 @@
-Hey there, System Administator! Have a nice day!
+Hey there, System Administator! 
+Have a nice day!
 You are connected to {{ ansible_default_ipv4.address }}
 And HOSTNAME is {{ ansible_hostname }}

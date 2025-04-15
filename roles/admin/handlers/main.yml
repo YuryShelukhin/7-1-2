@@ -1,0 +1,6 @@
+---
+# handlers file for apache-install
+- name: apache-reloaded
+  service:
+    name: apache2
+    state: reloaded

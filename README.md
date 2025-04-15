@@ -88,7 +88,7 @@ ansible-playbook 7-1-2-1-3.playbook.yml --ask-become-pass
 
 Приветствие до изменения  
 <img src = "img/1-12.png" width = 60%>  
-Создадим плейбук, используя модуль copy, метод повышения прав и указание запрашиваемых знвчений Gathering Facts в поле  content.  
+Создадим плейбук, используя модуль copy, метод повышения прав и указание запрашиваемых значений Gathering Facts в поле  content.  
 Запустим плейбук.  
 ansible-playbook 7-1-2-2-1.playbook.yml --ask-become-pass   
 модуль отработал    
@@ -121,15 +121,9 @@ ansible-playbook 7-1-2-2-1.playbook.yml --ask-become-pass
 ## Решение 3
 
 1. 
-<img src = "img/1-1.png" width = 60%>    
+Создадим плейбук, используя модуль apt, метод повышения прав и указание переменной в отдельном файле.  
+Запустим плейбук.  
+ansible-playbook 7-1-2-1-3.playbook.yml --ask-become-pass
 
-2. 
-<img src = "img/1-1.png" width = 60%>   
-
-3. 
-<img src = "img/1-1.png" width = 60%>  
-
-4. 
-<img src = "img/1-1.png" width = 60%>
 
 ---
