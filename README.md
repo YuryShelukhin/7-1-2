@@ -30,7 +30,7 @@ host_key_checking=false
 скопируем файл hosts в директорию с домашним заданием 
 <img src = "img/1-1.png" width = 60%>  
 настроим переменную
-export PATH=$PATH:/usr/bin/ansibl  
+export PATH=$PATH:/usr/bin/ansible  
 Настроим второй компьютер (воркер, 192.168.65.136)  
 sudo apt install openssh-server openssh-client  
 отправим на него публичный ключ    
@@ -52,7 +52,7 @@ ansible-playbook 7-1-2-1-1.playbook.yml
 
 2. 
 Создадим плейбук, используя модули apt, ansible.builtin.service, ansible.builtin.systemd и метод повышения прав.  
-Исправим кофигурационный файл  
+Исправим конфигурационный файл  
 <img src = "img/1-6.png" width = 60%>  
 запустим плейбук (подходит такой ключ)  
 ansible-playbook 7-1-2-1-2.playbook.yml --ask-become-pass    
@@ -60,8 +60,11 @@ ansible-playbook 7-1-2-1-2.playbook.yml --ask-become-pass
 <img src = "img/1-7.png" width = 60%>  
 проверим добавдение демона в автозагрузку  
 systemctl list-unit-files --type=service --state=enabled | grep tuned  
-<img src = "img/1-7.png" width = 60%>  
+<img src = "img/1-8.png" width = 60%>  
 [ссылка на плейбук](./7-1-2-1-2.playbook.yml).
+
+3. 
+
 
 ---
 
