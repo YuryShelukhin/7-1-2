@@ -1,29 +1,35 @@
 ---
 - name: Playbook 7-1-2-1-2
   hosts: my
-   
+  become: true
+  become_user: root
+  become_method: sudo
+  
   tasks:
-    - name: packages | ensure apt list dir exists
-      file:
-        path: /var/lib/apt/lists/
-        state: directory
-        mode: 0755
-    
-    - name: Install app
-      apt:
-        name: tuned
-        state: present
-        update_cache: yes
-    
-    - name: Start app tuned
-      ansible.builtin.service:
-        name: tuned
-        state: started  
-
-    - name: making autorun app tuned
-      ansible.builtin.systemd:
-        name: tuned 
-        state: started
-        enabled: true
+#    - name: packages | ensure apt list dir exists
+#      file:
+#        path: /var/lib/apt/lists/lock
+#        state: file
+#        mode: 0644
    
+     - name: Install app
+       apt:
+         update_cache: true
+         name: tuned
+         state: present
+         
+        
+#    - name: Start app tuned
+#      ansible.builtin.service:
+#        name: tuned
+#        state: started 
+#        update_cache: true
+      
+#    - name: making autorun app tuned
+#      ansible.builtin.systemd:
+#        name: tuned 
+#        state: started
+#        enabled: true
+#        update_cache: true
+         
 ...
