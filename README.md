@@ -51,7 +51,17 @@ ansible-playbook 7-1-2-1-1.playbook.yml
 [ссылка на плейбук](./7-1-2-1-1.playbook.yml).  
 
 2. 
-
+Создадим плейбук, используя модули apt, ansible.builtin.service, ansible.builtin.systemd и метод повышения прав.  
+Исправим кофигурационный файл  
+<img src = "img/1-6.png" width = 60%>  
+запустим плейбук (подходит такой ключ)  
+ansible-playbook 7-1-2-1-2.playbook.yml --ask-become-pass    
+все модули  отработали  
+<img src = "img/1-7.png" width = 60%>  
+проверим добавдение демона в автозагрузку  
+systemctl list-unit-files --type=service --state=enabled | grep tuned  
+<img src = "img/1-7.png" width = 60%>  
+[ссылка на плейбук](./7-1-2-1-2.playbook.yml).
 
 ---
 

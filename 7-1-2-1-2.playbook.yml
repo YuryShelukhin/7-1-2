@@ -12,24 +12,21 @@
 #        state: file
 #        mode: 0644
    
-     - name: Install app
-       apt:
-         update_cache: true
-         name: tuned
-         state: present
-         
-        
-#    - name: Start app tuned
-#      ansible.builtin.service:
-#        name: tuned
-#        state: started 
-#        update_cache: true
+    - name: Install app
+      apt:
+        update_cache: true
+        name: tuned
+        state: present
+                
+    - name: Start app tuned
+      ansible.builtin.service:
+        name: tuned
+        state: started
       
-#    - name: making autorun app tuned
-#      ansible.builtin.systemd:
-#        name: tuned 
-#        state: started
-#        enabled: true
-#        update_cache: true
+    - name: making autorun app tuned
+      ansible.builtin.systemd:
+        name: tuned 
+        state: started
+        enabled: true
          
 ...
