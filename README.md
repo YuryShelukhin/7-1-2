@@ -64,7 +64,17 @@ systemctl list-unit-files --type=service --state=enabled | grep tuned
 [ссылка на плейбук](./7-1-2-1-2.playbook.yml).
 
 3. 
-
+Приветствие до изменения  
+<img src = "img/1-9.png" width = 60%>  
+Создадим плейбук, используя модуль copy, метод повышения прав и указание переменной в отдельном файле.  
+Запустим плейбук.  
+ansible-playbook 7-1-2-1-3.playbook.yml --ask-become-pass  
+модуль отработал  
+<img src = "img/1-10.png" width = 60%>  
+Зайдем для проверки на управляемый хост через SSH.
+<img src = "img/1-11.png" width = 60%>  
+[ссылка на плейбук](./7-1-2-1-3.playbook.yml).  
+[ссылка на файл со значением переменной](./vars/motd.yml).  
 
 ---
 

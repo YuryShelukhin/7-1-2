@@ -1,26 +1,15 @@
 ---
-- name: Playbook 7-1-2-1-2
+- name: Playbook 7-1-2-1-3
   hosts: my
   become: true
   become_user: root
   become_method: sudo
+  vars_files: ./vars/motd.yml
   
   tasks:
-    - name: Install app
-      apt:
-        update_cache: true
-        name: tuned
-        state: present
-                
-    - name: Start app tuned
-      ansible.builtin.service:
-        name: tuned
-        state: started
-      
-    - name: making autorun app tuned
-      ansible.builtin.systemd:
-        name: tuned 
-        state: started
-        enabled: true
+    - name: Copy using inline content
+      ansible.builtin.copy:
+        content: "{{ motd }}"
+        dest: /etc/motd    
          
 ...
