@@ -5,24 +5,13 @@
   become_user: root
   become_method: sudo
   roles:
-    - roles: admin 
-  
+    - roles: apache-install
+      
   tasks:
     - name: Install Apache
       apt:
         update_cache: true
         name: Apache
         state: present
-                
-    - name: Start app tuned
-      ansible.builtin.service:
-        name: tuned
-        state: started
-      
-    - name: making autorun app tuned
-      ansible.builtin.systemd:
-        name: tuned 
-        state: started
-        enabled: true
-         
+            
 ...
