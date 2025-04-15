@@ -1,0 +1,17 @@
+---
+- name: Playbook 7-1-2-2-1
+  hosts: my
+  become: true
+  become_user: root
+  become_method: sudo
+# vars_files: ./vars/motd.yml
+  
+  tasks:
+    - name: Copy using inline content
+      ansible.builtin.copy:
+#       src: /home/yury/HW/7-1-2/motd
+        dest: /etc/motd  
+#       content: "{{ ansible_hostname }}"
+        content: 'Hey there, System Administator! Have a nice day! You are connected to "{{ ansible_default_ipv4.address }}" and HOSTNAME is "{{ ansible_hostname }}"'
+
+...       

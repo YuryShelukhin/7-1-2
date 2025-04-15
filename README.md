@@ -86,7 +86,16 @@ ansible-playbook 7-1-2-1-3.playbook.yml --ask-become-pass
 
 ## Решение 2
 
-<img src = "img/1-1.png" width = 60%> 
+Приветствие до изменения  
+<img src = "img/1-12.png" width = 60%>  
+Создадим плейбук, используя модуль copy, метод повышения прав и указание запрашиваемых знвчений Gathering Facts в поле  content.  
+Запустим плейбук.  
+ansible-playbook 7-1-2-2-1.playbook.yml --ask-become-pass   
+модуль отработал    
+<img src = "img/1-13.png" width = 60%>  
+Зайдем для проверки на управляемый хост через SSH.  
+<img src = "img/1-14.png" width = 60%>    
+[ссылка на плейбук](./7-1-2-2-1.playbook.yml).    
 
 ---
 
