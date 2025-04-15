@@ -121,9 +121,20 @@ ansible-playbook 7-1-2-2-1.playbook.yml --ask-become-pass
 ## Решение 3
 
 1. 
-Создадим плейбук, используя модуль apt, метод повышения прав и указание переменной в отдельном файле.  
-Запустим плейбук.  
-ansible-playbook 7-1-2-1-3.playbook.yml --ask-become-pass
-
+Создадим роль.  
+~/HW/7-1-2$ ansible-galaxy role init apache-install    
+<img src = "img/1-15.png" width = 60%>    
+Построим структуру роли на основе типовой роли с сайта https://galaxy.ansible.com  
+Создадим плейбук роли, используя модуль метод повышения прав.    
+Запустим плейбук.    
+ansible-playbook 7-1-2-1-3.playbook.yml --ask-become-pass  
+модуль отработал     
+<img src = "img/1-16.png" width = 60%>  
+Проверим, перейдя в браузере по адресу http://192.168.65.136/  
+<img src = "img/1-17.png" width = 60%>   
+Проверим посредством сервиса curl  
+curl -I -L http://192.168.65.136/  
+<img src = "img/1-18.png" width = 60%>  
+[ссылка на архив каталога роли](./roles.tar.xz)
 
 ---

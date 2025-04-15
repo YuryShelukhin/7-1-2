@@ -5,13 +5,6 @@
   become_user: root
   become_method: sudo
   roles:
-    - roles: apache-install
-      
-  tasks:
-    - name: Install Apache
-      apt:
-        update_cache: true
-        name: Apache
-        state: present
-            
+    - role: apache-install
+          
 ...
